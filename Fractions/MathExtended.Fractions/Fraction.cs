@@ -5,10 +5,20 @@ namespace MathExtended.Fractions
 {
     public partial class Fraction
     {
-        public int Numerator { get; set; }
-        public int Denominator { get; set; }
+        private int _denominator;
 
-        public Fraction() : this(1, 1) { }
+        public int Numerator { get; set; }
+        public int Denominator
+        {
+            get => _denominator;
+            set
+            {
+                if (value == 0) throw new InvalidOperationException("Denominator cannot be 0.");
+                _denominator = value;
+            }
+        }
+
+        public Fraction() : this(0, 1) { }
 
         public Fraction(int numerator) : this(numerator, 1) { }
 
