@@ -6,6 +6,11 @@ namespace MathExtended.Fractions
     {
         public double Accuracy { get; set; } = 0.00001;
 
+        /// <summary>
+        /// Converts decimal number (double) to fraction.
+        /// Algorithm: "Algorithm To Convert A Decimal To A Fraction" by John Kennedy, Mathematics Department, Santa Monica College, 1900 Pico Blvd., Santa Monica, CA 90405, jrkennedy6@gmail.com
+        /// </summary>
+        /// <param name="value"></param>
         private void DecimalToFraction(double value)
         {
             int sign = Math.Sign(value);
