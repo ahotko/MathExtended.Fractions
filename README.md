@@ -44,7 +44,7 @@ Console.WriteLine($"Fraction = {fraction.ToString()}");
 ### Assigning the value
 
 ```csharp
-//value can be assigned at creation, as seen in [previous section](### Creation)
+//value can be assigned at creation, as seen in [previous section](###creation)
 
 //...or by using numerator and denominator properties:
 fraction.Numerator = 3;
