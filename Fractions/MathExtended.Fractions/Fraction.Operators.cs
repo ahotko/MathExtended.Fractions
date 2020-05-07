@@ -17,13 +17,13 @@ namespace MathExtended.Fractions
             return result;
         }
 
-        public static Fraction operator +(Fraction firstValue, int number)
+        public static Fraction operator +(Fraction firstValue, double number)
         {
             var secondValue = new Fraction(number);
             return firstValue + secondValue;
         }
 
-        public static Fraction operator +(int number, Fraction fraction)
+        public static Fraction operator +(double number, Fraction fraction)
         {
             var firstValue = new Fraction(number);
             return firstValue + fraction;
@@ -38,12 +38,12 @@ namespace MathExtended.Fractions
             return firstValue + (-secondValue);
         }
 
-        public static Fraction operator -(Fraction firstValue, int number)
+        public static Fraction operator -(Fraction firstValue, double number)
         {
             return firstValue - new Fraction(number);
         }
 
-        public static Fraction operator -(int number, Fraction fraction)
+        public static Fraction operator -(double number, Fraction fraction)
         {
             return new Fraction(number) - fraction;
         }
@@ -60,12 +60,12 @@ namespace MathExtended.Fractions
             return result;
         }
 
-        public static Fraction operator *(Fraction firstValue, int number)
+        public static Fraction operator *(Fraction firstValue, double number)
         {
             return firstValue * new Fraction(number);
         }
 
-        public static Fraction operator *(int number, Fraction firstValue)
+        public static Fraction operator *(double number, Fraction firstValue)
         {
             return firstValue * new Fraction(number);
         }
@@ -77,14 +77,14 @@ namespace MathExtended.Fractions
             return firstValue * secondValue.Inversed();
         }
 
-        public static Fraction operator /(Fraction fraction, int number)
+        public static Fraction operator /(Fraction fraction, double number)
         {
-            return fraction * new Fraction(1, number);
+            return fraction * new Fraction(number).Inversed();
         }
 
-        public static Fraction operator /(int number, Fraction fraction)
+        public static Fraction operator /(double number, Fraction fraction)
         {
-            return fraction * new Fraction(1, number);
+            return fraction * new Fraction(number).Inversed();
         }
         #endregion
 

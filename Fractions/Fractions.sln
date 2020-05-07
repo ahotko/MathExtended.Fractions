@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.Fractions", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.Fractions.Test", "MathExtended.Fractions.Test\MathExtended.Fractions.Test.csproj", "{1BAF039C-4FD8-41CA-81CE-D443103BE754}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.Fractions.Driver", "MathExtended.Fractions.Driver\MathExtended.Fractions.Driver.csproj", "{7A6ED3BA-43D8-4DB9-9E98-E0BE4868CBC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1BAF039C-4FD8-41CA-81CE-D443103BE754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BAF039C-4FD8-41CA-81CE-D443103BE754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BAF039C-4FD8-41CA-81CE-D443103BE754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6ED3BA-43D8-4DB9-9E98-E0BE4868CBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6ED3BA-43D8-4DB9-9E98-E0BE4868CBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6ED3BA-43D8-4DB9-9E98-E0BE4868CBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6ED3BA-43D8-4DB9-9E98-E0BE4868CBC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

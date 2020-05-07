@@ -33,8 +33,9 @@ namespace MathExtended.Fractions
             }
         }
 
-        public Fraction(double value)
+        public Fraction(double value, double accuracy = 0.00001)
         {
+            Accuracy = accuracy;
             DecimalToFraction(value);
         }
     }
