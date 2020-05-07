@@ -4,14 +4,16 @@ namespace MathExtended.Fractions
 {
     public partial class Fraction
     {
-        #region Operator +
+        #region Addition (Operator +)
         public static Fraction operator +(Fraction fraction) => fraction;
 
         public static Fraction operator +(Fraction firstValue, Fraction secondValue)
         {
-            var result = new Fraction();
-            result.Numerator = firstValue.Numerator * secondValue.Denominator + secondValue.Numerator * firstValue.Denominator;
-            result.Denominator = firstValue.Denominator * secondValue.Denominator;
+            var result = new Fraction()
+            {
+                Numerator = firstValue.Numerator * secondValue.Denominator + secondValue.Numerator * firstValue.Denominator,
+                Denominator = firstValue.Denominator * secondValue.Denominator
+            };
             return result;
         }
 
@@ -28,7 +30,7 @@ namespace MathExtended.Fractions
         }
         #endregion
 
-        #region Operator -
+        #region Subtraction (Operator -)
         public static Fraction operator -(Fraction fraction) => new Fraction(-fraction.Numerator, fraction.Denominator);
 
         public static Fraction operator -(Fraction firstValue, Fraction secondValue)
@@ -47,12 +49,14 @@ namespace MathExtended.Fractions
         }
         #endregion
 
-        #region Operator *
+        #region Multiplication (Operator *)
         public static Fraction operator *(Fraction firstValue, Fraction secondValue)
         {
-            var result = new Fraction();
-            result.Numerator = firstValue.Numerator * secondValue.Numerator;
-            result.Denominator = firstValue.Denominator * secondValue.Denominator;
+            var result = new Fraction()
+            {
+                Numerator = firstValue.Numerator * secondValue.Numerator,
+                Denominator = firstValue.Denominator * secondValue.Denominator
+            };
             return result;
         }
 
@@ -67,7 +71,7 @@ namespace MathExtended.Fractions
         }
         #endregion
 
-        #region Operator /
+        #region Division (Operator /)
         public static Fraction operator /(Fraction firstValue, Fraction secondValue)
         {
             return firstValue * secondValue.Inversed();
@@ -140,7 +144,7 @@ namespace MathExtended.Fractions
         #region Operator <=
         public static Boolean operator <=(Fraction firstValue, Fraction secondValue)
         {
-            return (firstValue.Reduced().Numerator == secondValue.Reduced().Numerator && firstValue.Reduced().Denominator == secondValue.Reduced().Denominator);
+            return (firstValue.AsDouble <= secondValue.AsDouble);
         }
         #endregion
 

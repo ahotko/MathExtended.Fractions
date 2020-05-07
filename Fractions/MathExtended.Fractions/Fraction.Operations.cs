@@ -4,6 +4,7 @@
     {
         public int GreatestCommonDivisor(int a, int b)
         {
+            if (b == 0) return 1;
             int tmp = 0;
             while(a % b > 0)
             {

@@ -6,6 +6,22 @@ namespace MathExtended.Fractions.Test
     public class Fractions
     {
         [TestMethod]
+        public void Creation()
+        {
+            var fractionFromDecimal = new Fraction(0.75);
+            var fractionFromDecimal_1_over_3 = new Fraction(0.333333);
+            var fractionFromDecimal_1_over_10 = new Fraction(0.1);
+            var fractionFromString = new Fraction("1/5");
+            var fractionFromSeparateValues = new Fraction(2, 5);
+
+            Assert.IsTrue(fractionFromDecimal == new Fraction(3, 4), "Fraction from decimal is not ok!");
+            Assert.IsTrue(fractionFromDecimal_1_over_3 == new Fraction(1, 3), "Fraction 1/3 from decimal is not ok!");
+            Assert.IsTrue(fractionFromDecimal_1_over_10 == new Fraction(1, 10), "Fraction 1/10 from decimal is not ok!");
+            Assert.IsTrue(fractionFromString == new Fraction(1, 5), "Fraction from string is not ok!");
+            Assert.IsTrue(fractionFromSeparateValues == new Fraction(2, 5), "Fraction from separate values is not ok!");
+        }
+
+        [TestMethod]
         public void Addition()
         {
             var a = new Fraction(1, 3);

@@ -45,7 +45,9 @@
     <Compile Include="Fraction.cs" />
     <Compile Include="Fraction.Operators.cs" />
     <Compile Include="Fraction.Operations.cs" />
+    <Compile Include="Fraction.Ratios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ratios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
