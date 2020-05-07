@@ -43,7 +43,7 @@ Console.WriteLine($"Fraction = {fraction.ToString()}");
 
 ### Assigning the value
 
-Value can be initially assigned at creation, as seen in [previous section](###creation).
+Value can be initially assigned at creation, as seen in [previous section](#creation).
 If value needs to be assigned afterwards afterwards, there are several possible ways.
 
 ```csharp
