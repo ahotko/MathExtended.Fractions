@@ -31,7 +31,7 @@ namespace MathExtended.Fractions
             }
             if (value > 1E19)
             {
-                Numerator = Int32.MaxValue;
+                Numerator = sign * Int32.MaxValue;
                 Denominator = 1;
                 return;
             }
