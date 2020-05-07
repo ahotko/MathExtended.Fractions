@@ -113,6 +113,16 @@ namespace MathExtended.Fractions.Driver
             fraction.AsFloat = 0.5f;
             Console.WriteLine($"Fraction = {fraction.ToString()}, AsFloat = {fraction.AsFloat}");
 
+            Console.WriteLine();
+            Console.WriteLine("Different outputs");
+            fraction = new Fraction(10, 5);
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            fraction = new Fraction(11, 5);
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            fraction = new Fraction(3, 5);
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            fraction = new Fraction(15, -15);
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
 
             Console.ReadKey();
         }

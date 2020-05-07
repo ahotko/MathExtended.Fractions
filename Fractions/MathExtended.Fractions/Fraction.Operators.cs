@@ -162,10 +162,5 @@ namespace MathExtended.Fractions
         {
             return this.ToString().GetHashCode();
         }
-
-        public override string ToString()
-        {
-            return String.Format($"{this.Numerator}/{this.Denominator}");
-        }
     }
 }

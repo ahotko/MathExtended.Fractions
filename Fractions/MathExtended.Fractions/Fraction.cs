@@ -38,7 +38,7 @@ namespace MathExtended.Fractions
             Match match = pattern.Match(fraction);
             if (match.Success)
             {
-                Numerator   = Convert.ToInt32(match.Groups["numerator"].Value.Trim());
+                Numerator = Convert.ToInt32(match.Groups["numerator"].Value.Trim());
                 Denominator = Convert.ToInt32(match.Groups["denominator"].Value.Trim());
             }
         }
@@ -47,6 +47,27 @@ namespace MathExtended.Fractions
         {
             Accuracy = accuracy;
             DecimalToFraction(value);
+        }
+
+        public string ToString(bool showWholePart = false)
+        {
+            if (showWholePart)
+            {
+                int signNum = Math.Sign(Numerator);
+                int signDen = Math.Sign(Denominator);
+
+                int absNum = Math.Abs(Numerator);
+                int absDen = Math.Abs(Denominator);
+
+                int wholePart = Numerator / Denominator;
+                int numeratorRemainder = absNum % absDen;
+
+                if (absDen == 1) return String.Format($"{signDen * this.Numerator}");
+                if (absNum == absDen) return String.Format($"{signNum * signDen}");
+                if (wholePart != 0 && numeratorRemainder > 0) return String.Format($"{wholePart} {numeratorRemainder}/{absDen}");
+                if (wholePart != 0 && numeratorRemainder == 0) return String.Format($"{wholePart}");
+            }
+            return String.Format($"{this.Numerator}/{this.Denominator}");
         }
     }
 }
