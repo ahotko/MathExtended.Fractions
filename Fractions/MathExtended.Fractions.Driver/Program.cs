@@ -122,6 +122,10 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
             fraction = new Fraction(15, -15);
             Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            fraction = new Fraction(11, 175);
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            fraction = new Fraction(113, 11);
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
 
             Console.WriteLine();
             Console.WriteLine("Continued fractions");
