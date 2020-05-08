@@ -65,64 +65,78 @@ namespace MathExtended.Fractions
 
         public string ToString(DisplayOptions displayOptions = DisplayOptions.None)
         {
-            string result = String.Format($"{this.Numerator}/{this.Denominator}");
+            int fractionSign = Math.Sign(Numerator) / Math.Sign(Denominator);
+
+            int usedNum = Math.Abs(Numerator);
+            int usedDen = Math.Abs(Denominator);
+
+            string wholePart = String.Empty;
+            string fractionalPart = String.Format($"{usedNum}/{usedDen}");
 
             if (displayOptions.HasFlag(DisplayOptions.ShowWholePart))
             {
-                int signNum = Math.Sign(Numerator);
-                int signDen = Math.Sign(Denominator);
+                int absNum = usedNum;
+                int absDen = usedDen;
 
-                int absNum = Math.Abs(Numerator);
-                int absDen = Math.Abs(Denominator);
-
-                int wholePart = Numerator / Denominator;
+                int integerPart = absNum / absDen;
                 int numeratorRemainder = absNum % absDen;
 
                 if (absDen == 1)
                 {
-                    result = String.Format($"{signDen * this.Numerator}");
+                    wholePart = String.Format($"{this.Numerator}");
+                    fractionalPart = String.Empty;
                 }
                 else if (absNum == absDen)
                 {
-                    result = String.Format($"{signNum * signDen}");
+                    wholePart = String.Format($"{absNum / absDen}");
+                    fractionalPart = String.Empty;
                 }
-                else if (wholePart != 0 && numeratorRemainder > 0)
+                else if (integerPart != 0 && numeratorRemainder > 0)
                 {
-                    result = String.Format($"{wholePart} {numeratorRemainder}/{absDen}");
+                    wholePart = String.Format($"{integerPart}");
+                    fractionalPart = $"{numeratorRemainder}/{absDen}";
+                    usedNum = numeratorRemainder;
+                    usedDen = absDen;
                 }
-                else if (wholePart != 0 && numeratorRemainder == 0)
+                else if (integerPart != 0 && numeratorRemainder == 0)
                 {
-                    result = String.Format($"{wholePart}");
+                    wholePart = String.Format($"{integerPart}");
+                    fractionalPart = String.Empty;
                 }
             }
-            if (displayOptions.HasFlag(DisplayOptions.UseUnicodeFractions) && result.Contains("/"))
+            if (displayOptions.HasFlag(DisplayOptions.UseUnicodeFractions) && !String.IsNullOrEmpty(fractionalPart))
             {
-                //it's a fraction, not just a whole number
-                var parts = result.Split(new char[] { ' ' });
-
-                string wholePart = (parts.Length != 2) ? String.Empty : parts[0];
-                string fractionalPart = parts[(parts.Length == 2) ? 1 : 0];
-
-                var builder = new StringBuilder();
-                bool isNumerator = true;
-
-                foreach (char number in fractionalPart)
+                //test, if we can use vulgar fraction
+                if (Constants.Characters.VulgarFractions.ContainsKey(Tuple.Create(usedNum, usedDen)))
                 {
-                    if (number == '/')
-                    {
-                        isNumerator = false;
-                        builder.Append(Constants.Characters.Slash);
-                    }
-                    else
-                    {
-                        int digit = Convert.ToInt32(number) - 0x30;
-                        builder.Append(isNumerator ? Constants.Characters.Superscript.Mapping[digit] : Constants.Characters.Subscript.Mapping[digit]);
-                    }
+                    fractionalPart = Constants.Characters.VulgarFractions[Tuple.Create(usedNum, usedDen)];
                 }
+                else
+                {
+                    var builder = new StringBuilder();
+                    bool isNumerator = true;
 
-                result = $"{wholePart} {builder.ToString()}";
+                    foreach (char number in fractionalPart)
+                    {
+                        if (number == '/')
+                        {
+                            isNumerator = false;
+                            builder.Append(Constants.Characters.Slash);
+                        }
+                        else
+                        {
+                            int digit = Convert.ToInt32(number) - 0x30;
+                            builder.Append(isNumerator ? Constants.Characters.Superscript.Mapping[digit] : Constants.Characters.Subscript.Mapping[digit]);
+                        }
+                    }
+
+                    fractionalPart = $"{builder.ToString()}";
+                }
             }
-            return result.Trim();
+
+            string extraWhiteSpace = String.IsNullOrEmpty(wholePart) ? String.Empty : " ";
+            string sign = (fractionSign > 0) ? String.Empty : "-";
+            return $"{sign}{wholePart}{extraWhiteSpace}{fractionalPart}".Trim();
         }
     }
 }

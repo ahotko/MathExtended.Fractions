@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MathExtended.Fractions
 {
@@ -15,6 +16,29 @@ namespace MathExtended.Fractions
         internal static class Characters
         {
             public static readonly string Slash = "\u2044";
+
+            public static readonly Dictionary<Tuple<int, int>, string> VulgarFractions = new Dictionary<Tuple<int, int>, string>()
+            {
+                { Tuple.Create(1, 2), "\u00BD" },
+                { Tuple.Create(1, 3), "\u2153" },
+                { Tuple.Create(2, 3), "\u2154" },
+                { Tuple.Create(1, 4), "\u00BC" },
+                { Tuple.Create(3, 4), "\u00BE" },
+                { Tuple.Create(1, 5), "\u2155" },
+                { Tuple.Create(2, 5), "\u2156" },
+                { Tuple.Create(3, 5), "\u2157" },
+                { Tuple.Create(4, 5), "\u2158" },
+                { Tuple.Create(1, 6), "\u2159" },
+                { Tuple.Create(5, 6), "\u215A" },
+                { Tuple.Create(1, 7), "\u2150" },
+                { Tuple.Create(1, 8), "\u215B" },
+                { Tuple.Create(3, 8), "\u215C" },
+                { Tuple.Create(5, 8), "\u215D" },
+                { Tuple.Create(7, 8), "\u215E" },
+                { Tuple.Create(1, 9), "\u2151" },
+                { Tuple.Create(1, 10), "\u2152" },
+                { Tuple.Create(0, 3), "\u2189" }
+            };
 
             internal static class Superscript
             {
