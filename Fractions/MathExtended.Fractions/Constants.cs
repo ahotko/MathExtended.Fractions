@@ -15,7 +15,8 @@ namespace MathExtended.Fractions
 
         internal static class Characters
         {
-            public static readonly string Slash = "\u2044";
+            public static readonly string FractionSlash = "\u2044";
+            public static readonly string SquareRoot = "\u221A";
 
             public static readonly Dictionary<Tuple<int, int>, string> VulgarFractions = new Dictionary<Tuple<int, int>, string>()
             {

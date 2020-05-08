@@ -134,9 +134,9 @@ namespace MathExtended.Fractions.Driver
             fraction = new Fraction(ContinuedFractions.Phi);
             Console.WriteLine($"Fraction (Phi) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
             fraction = new Fraction(ContinuedFractions.Sqrt2);
-            Console.WriteLine($"Fraction (Sqrt2) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            Console.WriteLine($"Fraction (\u221A2) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
             fraction = new Fraction(ContinuedFractions.Sqrt3);
-            Console.WriteLine($"Fraction (Sqrt3) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            Console.WriteLine($"Fraction (\u221A3) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
             fraction = new Fraction("[2;1,4,3]");
             Console.WriteLine($"Fraction (45/16) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
 

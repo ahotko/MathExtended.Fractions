@@ -121,7 +121,7 @@ namespace MathExtended.Fractions
                         if (number == '/')
                         {
                             isNumerator = false;
-                            builder.Append(Constants.Characters.Slash);
+                            builder.Append(Constants.Characters.FractionSlash);
                         }
                         else
                         {
