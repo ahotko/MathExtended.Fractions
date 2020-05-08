@@ -6,6 +6,9 @@ namespace MathExtended.Fractions.Driver
     {
         static void Main(string[] args)
         {
+            //for support of unicode characters
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             //testing fractions
             Fraction fraction = new Fraction(2, 5);
             Console.WriteLine($"Fraction = {fraction.ToString()}");
@@ -112,13 +115,13 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine();
             Console.WriteLine("Different outputs");
             fraction = new Fraction(10, 5);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
             fraction = new Fraction(11, 5);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
             fraction = new Fraction(3, 5);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
             fraction = new Fraction(15, -15);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
 
             Console.WriteLine();
             Console.WriteLine("Continued fractions");
