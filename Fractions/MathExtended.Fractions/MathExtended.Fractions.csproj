@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Fraction.Conversions.cs" />
     <Compile Include="Fraction.cs" />
     <Compile Include="Fraction.Operators.cs" />
     <Compile Include="Fraction.Operations.cs" />
+    <Compile Include="Fraction.Parsers.cs" />
     <Compile Include="Fraction.Ratios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ratios.cs" />

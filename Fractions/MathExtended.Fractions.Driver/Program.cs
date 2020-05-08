@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MathExtended.Fractions.Driver
 {
@@ -123,6 +119,23 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
             fraction = new Fraction(15, -15);
             Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(true)}");
+
+            Console.WriteLine();
+            Console.WriteLine("Continued fractions");
+            fraction = new Fraction(ContinuedFractions.e);
+            Console.WriteLine($"Fraction (e) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction(ContinuedFractions.Pi);
+            Console.WriteLine($"Fraction (Pi) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction(Math.PI);
+            Console.WriteLine($"Fraction (Math.Pi) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction(ContinuedFractions.Phi);
+            Console.WriteLine($"Fraction (Phi) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction(ContinuedFractions.Sqrt2);
+            Console.WriteLine($"Fraction (Sqrt2) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction(ContinuedFractions.Sqrt3);
+            Console.WriteLine($"Fraction (Sqrt3) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction("[2;1,4,3]");
+            Console.WriteLine($"Fraction (45/16) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
 
             Console.ReadKey();
         }

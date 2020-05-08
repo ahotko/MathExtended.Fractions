@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Text;
 
 namespace MathExtended.Fractions
 {
@@ -56,6 +58,29 @@ namespace MathExtended.Fractions
             Denominator = denominator;
         }
 
+        private string GenerateContinuedFraction()
+        {
+            int a0 = Numerator / Denominator;
+            int remainder = Numerator % Denominator;
+            int elementCount = 0;
+            Collection<int> sequence = new Collection<int>();
+
+            int midResult = Denominator;
+
+            while (remainder != 0 && elementCount < Constants.ContinuedMaxElements)
+            {
+                int prevRemainder = remainder;
+                int element = midResult / remainder;
+                remainder = midResult % remainder;
+                midResult = prevRemainder;
+                sequence.Add(element);
+                elementCount++;
+            }
+            var builder = new StringBuilder();
+            builder.Append("[").Append(a0).Append(";").Append(string.Join(",", sequence)).Append("]");
+            return builder.ToString();
+        }
+
         public double AsDouble
         {
             get => 1.0 * Numerator / Denominator;
@@ -71,6 +96,15 @@ namespace MathExtended.Fractions
             set
             {
                 DecimalToFraction(value);
+            }
+        }
+
+        public string AsContinuedFraction
+        {
+            get => GenerateContinuedFraction();
+            set
+            {
+                ParseContinuedFraction(value);
             }
         }
     }

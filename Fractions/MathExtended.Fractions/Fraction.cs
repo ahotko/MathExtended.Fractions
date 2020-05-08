@@ -31,16 +31,21 @@ namespace MathExtended.Fractions
         /// <summary>
         /// Create fraction from string
         /// </summary>
-        /// <param name="fraction">Fraction must be in format n/d (e.g. 3/4)</param>
+        /// <param name="fraction">Fraction must be in format n/d (e.g. 3/4) or in continued fraction format (e.g. [2;1,2,1,1,4,1,1,6,1,1,8])</param>
         public Fraction(string fraction)
         {
-            Regex pattern = new Regex(@"^(?<numerator>\d+)\/(?<denominator>\d+)$");
-            Match match = pattern.Match(fraction);
-            if (match.Success)
+            if (Regex.IsMatch(fraction, Constants.FractionMatchingPattern))
             {
-                Numerator = Convert.ToInt32(match.Groups["numerator"].Value.Trim());
-                Denominator = Convert.ToInt32(match.Groups["denominator"].Value.Trim());
+                ParseFraction(fraction);
+                return;
             }
+
+            if (Regex.IsMatch(fraction, Constants.ContinuedFractionMatchingPattern))
+            {
+                ParseContinuedFraction(fraction);
+                return;
+            }
+            throw new ArgumentException("Invalid fraction format.", "fraction");
         }
 
         public Fraction(double value, double accuracy = 0.00001)
