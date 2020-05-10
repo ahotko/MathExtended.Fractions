@@ -115,17 +115,17 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine();
             Console.WriteLine("Different outputs");
             fraction = new Fraction(10, 5);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters)}");
             fraction = new Fraction(11, 5);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters)}");
             fraction = new Fraction(3, 5);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters)}");
             fraction = new Fraction(15, -15);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters)}");
             fraction = new Fraction(11, 175);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters)}");
             fraction = new Fraction(113, 11);
-            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ShowWholePart | Fraction.DisplayOptions.UseUnicodeFractions)}");
+            Console.WriteLine($"Fraction = {fraction.ToString()}, with whole part = {fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters)}");
 
             Console.WriteLine();
             Console.WriteLine("Continued fractions");

@@ -6,12 +6,18 @@ namespace MathExtended.Fractions
 {
     public partial class Fraction
     {
+        /// <summary>
+        /// Display Options for fractions.
+        /// </summary>
         [Flags]
         public enum DisplayOptions
         {
+            /// <summary>Default display of fraction (e.g. 2/5 or 31/7)</summary>
             None = 0,
-            ShowWholePart = 1,
-            UseUnicodeFractions = 2
+            /// <summary>Show improper fractions (e.g. 7/5) as mixed number (1 2/5)</summary>
+            ImproperFractionAsMixedNumber = 1,
+            /// <summary>Use unicode superscript and subscript set instead of standard ACSII set for numbers in fraction.</summary>
+            UseUnicodeCharacters = 2
         }
 
         private int _denominator;
@@ -73,7 +79,7 @@ namespace MathExtended.Fractions
             string wholePart = String.Empty;
             string fractionalPart = String.Format($"{usedNum}/{usedDen}");
 
-            if (displayOptions.HasFlag(DisplayOptions.ShowWholePart))
+            if (displayOptions.HasFlag(DisplayOptions.ImproperFractionAsMixedNumber))
             {
                 int absNum = usedNum;
                 int absDen = usedDen;
@@ -104,7 +110,7 @@ namespace MathExtended.Fractions
                     fractionalPart = String.Empty;
                 }
             }
-            if (displayOptions.HasFlag(DisplayOptions.UseUnicodeFractions) && !String.IsNullOrEmpty(fractionalPart))
+            if (displayOptions.HasFlag(DisplayOptions.UseUnicodeCharacters) && !String.IsNullOrEmpty(fractionalPart))
             {
                 //test, if we can use vulgar fraction
                 if (Constants.Characters.VulgarFractions.ContainsKey(Tuple.Create(usedNum, usedDen)))
