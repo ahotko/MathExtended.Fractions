@@ -3,7 +3,7 @@ Pure C# Fractions Library.
 
 ## Legal information and credits
 
-ImageProcessing is project by Ales Hotko and was first released in May 2020. It's licensed under the MIT license.
+MathExtended.Fractions is project by Ales Hotko and was first released in May 2020. It's licensed under the MIT license.
 
 ## Usage
 
