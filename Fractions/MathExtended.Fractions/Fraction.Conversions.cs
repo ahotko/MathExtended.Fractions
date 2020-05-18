@@ -67,7 +67,7 @@ namespace MathExtended.Fractions
 
             int midResult = Denominator;
 
-            while (remainder != 0 && elementCount < Constants.ContinuedMaxElements)
+            while (remainder != 0 && elementCount < Constants.ContinuedFractionMaxElements)
             {
                 int prevRemainder = remainder;
                 int element = midResult / remainder;

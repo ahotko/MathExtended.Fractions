@@ -11,12 +11,17 @@ namespace MathExtended.Fractions
         public static readonly string FractionGroupingPattern = @"^(?<numerator>\d+)\/(?<denominator>\d+)$";
         public static readonly string FractionMatchingPattern = @"^\d+\/\d+$";
 
-        public static readonly int ContinuedMaxElements = 50;
+        public static readonly int ContinuedFractionMaxElements = 50;
 
         internal static class Characters
         {
+            //FractionSlash = /
             public static readonly string FractionSlash = "\u2044";
+
+            //Radical symbols
             public static readonly string SquareRoot = "\u221A";
+            public static readonly string CubeRoot = "\u221B";
+            public static readonly string FourthRoot = "\u221C";
 
             public static readonly Dictionary<Tuple<int, int>, string> VulgarFractions = new Dictionary<Tuple<int, int>, string>()
             {

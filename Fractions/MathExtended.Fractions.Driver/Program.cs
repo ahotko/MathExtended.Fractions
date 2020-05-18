@@ -5,18 +5,41 @@ namespace MathExtended.Fractions.Driver
 {
     class Program
     {
+        private static ConsoleColor defaultForegroundColor = ConsoleColor.White;
+
+        private static void SetGreenFontColor()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
+
+        private static void SetDefaultFontColor()
+        {
+            Console.ForegroundColor = defaultForegroundColor;
+        }
+
+        public static void Title(string title)
+        {
+            SetGreenFontColor();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine(title);
+            SetDefaultFontColor();
+            Console.WriteLine("============================================================");
+        }
+
         private static void OutputFractionWithModifiers(Fraction fraction)
         {
             var builder = new StringBuilder();
             builder.Append("Fraction = ").Append(fraction.ToString());
-            builder.Append(", as mixed number = ").Append(fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber));
-            builder.Append(", with Unicode characters = ").Append(fraction.ToString(Fraction.DisplayOptions.UseUnicodeCharacters));
-            builder.Append(", all modifiers = ").Append(fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters));
+            builder.Append(", ").Append("as mixed number = ").Append(fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber));
+            builder.Append(", ").Append("with Unicode characters = ").Append(fraction.ToString(Fraction.DisplayOptions.UseUnicodeCharacters));
+            builder.Append(", ").Append("all modifiers = ").Append(fraction.ToString(Fraction.DisplayOptions.ImproperFractionAsMixedNumber | Fraction.DisplayOptions.UseUnicodeCharacters));
             Console.WriteLine(builder.ToString());
         }
 
         static void Main(string[] args)
         {
+            Console.Title = "C# MathExtended.Fractions Class Library (Test)";
             //for support of unicode characters
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -42,7 +65,7 @@ namespace MathExtended.Fractions.Driver
 
             //Operations
             //Addition
-            Console.WriteLine("Addition");
+            Title("Addition");
             var fractionOne = new Fraction(1, 5);
             var fractionTwo = new Fraction(2, 5);
             var result = fractionOne + fractionTwo;
@@ -55,8 +78,7 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
             //Subtraction
-            Console.WriteLine();
-            Console.WriteLine("Subtraction");
+            Title("Subtraction");
             result = fractionOne - fractionTwo;
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
@@ -67,8 +89,7 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
             //Multiplication
-            Console.WriteLine();
-            Console.WriteLine("Multiplication");
+            Title("Multiplication");
             result = fractionOne * fractionTwo;
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
@@ -79,8 +100,7 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
             //Division
-            Console.WriteLine();
-            Console.WriteLine("Division");
+            Title("Division");
             result = fractionOne / fractionTwo;
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
@@ -91,15 +111,13 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.Reduced().ToString()}");
 
             //other operations
-            Console.WriteLine();
-            Console.WriteLine("Reducing");
+            Title("Reducing");
             fraction = new Fraction(3, 15);
             Console.WriteLine($"Fraction = {fraction.ToString()}");
             fraction.Reduce();
             Console.WriteLine($"Fraction reduced = {fraction.ToString()}");
 
-            Console.WriteLine();
-            Console.WriteLine("Inversion");
+            Title("Inversion");
             fraction = new Fraction(3, 15);
             Console.WriteLine($"Fraction = {fraction.ToString()}");
             fraction.Inverse();
@@ -109,8 +127,7 @@ namespace MathExtended.Fractions.Driver
 
             //Assigning the value
             //...or by using numerator and denominator properties:
-            Console.WriteLine();
-            Console.WriteLine("Assigning the value");
+            Title("Assigning the value");
             fraction.Numerator = 3;
             fraction.Denominator = 7;
             Console.WriteLine($"Fraction = {fraction.ToString()}");
@@ -123,8 +140,7 @@ namespace MathExtended.Fractions.Driver
             fraction.AsFloat = 0.5f;
             Console.WriteLine($"Fraction = {fraction.ToString()}, AsFloat = {fraction.AsFloat}");
 
-            Console.WriteLine();
-            Console.WriteLine("Different outputs");
+            Title("Different outputs");
             fraction = new Fraction(10, 5);
             OutputFractionWithModifiers(fraction);
             fraction = new Fraction(11, 5);
@@ -138,8 +154,7 @@ namespace MathExtended.Fractions.Driver
             fraction = new Fraction(113, 11);
             OutputFractionWithModifiers(fraction);
 
-            Console.WriteLine();
-            Console.WriteLine("Continued fractions");
+            Title("Continued fractions");
             fraction = new Fraction(ContinuedFractions.e);
             Console.WriteLine($"Fraction (e) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
             fraction = new Fraction(ContinuedFractions.Pi);
