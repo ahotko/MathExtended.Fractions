@@ -131,8 +131,7 @@ namespace MathExtended.Fractions
                         }
                         else
                         {
-                            int digit = Convert.ToInt32(number) - 0x30;
-                            builder.Append(isNumerator ? Constants.Characters.Superscript.Mapping[digit] : Constants.Characters.Subscript.Mapping[digit]);
+                            builder.Append(isNumerator ? Constants.Characters.Superscript.CharMapping[number] : Constants.Characters.Subscript.CharMapping[number]);
                         }
                     }
 

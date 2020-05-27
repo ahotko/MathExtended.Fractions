@@ -48,6 +48,10 @@ namespace MathExtended.Fractions
 
             internal static class Superscript
             {
+                public static readonly string Plus = "\u207A";
+                public static readonly string Minus = "\u207B";
+                public static readonly string EqualsSign = "\u207C";
+
                 public static readonly string Zero = "\u2070";
                 public static readonly string One = "\u00B9";
                 public static readonly string Two = "\u00B2";
@@ -61,21 +65,42 @@ namespace MathExtended.Fractions
 
                 public static readonly Dictionary<int, string> Mapping = new Dictionary<int, string>()
                 {
-                    { 0, "\u2070"},
-                    { 1, "\u00B9"},
-                    { 2, "\u00B2"},
-                    { 3, "\u00B3"},
-                    { 4, "\u2074"},
-                    { 5, "\u2075"},
-                    { 6, "\u2076"},
-                    { 7, "\u2077"},
-                    { 8, "\u2078"},
-                    { 9, "\u2079"}
+                    { 0, Zero  },
+                    { 1, One   },
+                    { 2, Two   },
+                    { 3, Three },
+                    { 4, Four  },
+                    { 5, Five  },
+                    { 6, Six   },
+                    { 7, Seven },
+                    { 8, Eight },
+                    { 9, Nine  }
+                };
+
+                public static readonly Dictionary<char, string> CharMapping = new Dictionary<char, string>()
+                {
+                    { '0', Zero  },
+                    { '1', One   },
+                    { '2', Two   },
+                    { '3', Three },
+                    { '4', Four  },
+                    { '5', Five  },
+                    { '6', Six   },
+                    { '7', Seven },
+                    { '8', Eight },
+                    { '9', Nine  },
+                    { '+', Plus  },
+                    { '-', Minus },
+                    { '=', EqualsSign  }
                 };
             }
 
             internal static class Subscript
             {
+                public static readonly string Plus = "\u208A";
+                public static readonly string Minus = "\u208B";
+                public static readonly string EqualsSign = "\u208C";
+
                 public static readonly string Zero = "\u2080";
                 public static readonly string One = "\u2081";
                 public static readonly string Two = "\u2082";
@@ -89,16 +114,33 @@ namespace MathExtended.Fractions
 
                 public static readonly Dictionary<int, string> Mapping = new Dictionary<int, string>()
                 {
-                    { 0, "\u2080"},
-                    { 1, "\u2081"},
-                    { 2, "\u2082"},
-                    { 3, "\u2083"},
-                    { 4, "\u2084"},
-                    { 5, "\u2085"},
-                    { 6, "\u2086"},
-                    { 7, "\u2087"},
-                    { 8, "\u2088"},
-                    { 9, "\u2089"}
+                    { 0, Zero  },
+                    { 1, One   },
+                    { 2, Two   },
+                    { 3, Three },
+                    { 4, Four  },
+                    { 5, Five  },
+                    { 6, Six   },
+                    { 7, Seven },
+                    { 8, Eight },
+                    { 9, Nine  }
+                };
+
+                public static readonly Dictionary<char, string> CharMapping = new Dictionary<char, string>()
+                {
+                    { '0', Zero  },
+                    { '1', One   },
+                    { '2', Two   },
+                    { '3', Three },
+                    { '4', Four  },
+                    { '5', Five  },
+                    { '6', Six   },
+                    { '7', Seven },
+                    { '8', Eight },
+                    { '9', Nine  },
+                    { '+', Plus  },
+                    { '-', Minus },
+                    { '=', EqualsSign  }
                 };
             }
         }
