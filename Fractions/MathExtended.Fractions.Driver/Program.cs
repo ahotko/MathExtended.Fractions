@@ -167,6 +167,8 @@ namespace MathExtended.Fractions.Driver
             Console.WriteLine($"Fraction (\u221A2) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
             fraction = new Fraction(ContinuedFractions.Sqrt3);
             Console.WriteLine($"Fraction (\u221A3) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
+            fraction = new Fraction(ContinuedFractions.SqrtOneHalf);
+            Console.WriteLine($"Fraction (\u221A\u00BD) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
             fraction = new Fraction("[2;1,4,3]");
             Console.WriteLine($"Fraction (45/16) = {fraction.ToString()}, AsDouble = {fraction.AsDouble}, AsContinuedFraction = {fraction.AsContinuedFraction}");
 
